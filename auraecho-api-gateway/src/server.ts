@@ -81,7 +81,8 @@ app.post('/api/search', async (req, res) => {
   }
 });
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Node.js Application Gateway running on http://localhost:${PORT}`);
+const PORT = parseInt(process.env.PORT || '5000', 10);
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
 });
